@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body> 
+    <div class="cointner bg-slate-400 h-[60%] w-[80%] m-20  flex justify-center p-5" >
+        <div class="img flex justify-center"><img src="Solo-Leveling-Releases-Opening-Theme-as-Fans-Jump-with-Excitement-for-Anime-Adaptation.jpg" alt="" class="w-[190%] h-[90%] object-fill mr-5"></div>
+        <div class="content">
+            <div class="content1"><p class="text-2xl font-bold text-cyan-600">Anime Poster Giveaway <br>
+            <span class="text-sm text-black ">hurry up this giveaway is on for only ten dayes</span> <br>
+        <span class="text-cyan-900 text-sm font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci ipsum minima neque officiis quidem est aut veniam ratione autem repellendus earum incidunt
+             quo illo, maxime, illum ab iusto labore!</span></p></div>
+            <div class="countdown mt-1 flex space-x-1">
+                <span class="dayes  text-5xl text-slate-100 px-3  bg-gray-900 flex flex-col"> <span id="dyes">0</span> <span class="text-sm">days</span></span> 
+                <span class="hours  dayes text-5xl text-slate-100 px-3 bg-gray-900 flex flex-col"> <span id="hours">0</span> <span class="text-sm">hour</span></span>
+                <span class="min dayes text-5xl text-slate-100 px-3 bg-gray-900 flex flex-col"><span id="min">0</span> <span class="text-sm">min</span></span>
+                <span class="seconds dayes text-5xl text-slate-100 px-3 bg-gray-900 flex flex-col"><span id="sec">0</span> <span class="text-sm">sec</span> </span>
+            </div>
+        </div>
+    </div>
+ 
+    <script>
+        let endDate="8 feb 2024 03:40:00 PM"
+        let day=document.getElementById("dyes")
+        let hour=document.getElementById("hours")
+        let min=document.getElementById("min")
+        let sec=document.getElementById("sec")
+
+        
+function timeStart(){
+    let nulla="00"
+    let date=new Date(endDate)
+        let curr=new Date()
+        let exact=(date-curr)/1000
+    let dayes=Math.floor(exact/3600/24)
+    let hours=Math.floor(exact/3600)%24
+    let mins = Math.floor(exact/60)%60
+    let secs=Math.floor(exact)%60
+    if(exact<=0){
+        day.innerHTML=nulla
+    hour.innerHTML=nulla
+    min.innerHTML= nulla
+    sec.innerHTML= nulla
+     }else{
+        let ss= secs>=10?secs:"0"+secs
+    let mm= mins>=10?mins:"0"+mins
+    let hh= hours>=10?hours:"0"+hours
+    let dd= dayes>=10?dayes:"0"+dayes
+    
+    day.innerHTML=dd
+    hour.innerHTML=hh
+    min.innerHTML=mm
+    sec.innerHTML=ss
+     
+
+     }
+        
+     
+   
+}
+
+ function intervalStart(){
+    setInterval(()=>{
+        timeStart()
+    },1000)
+ }
+intervalStart()
+    </script>
+</body>
+</html>
